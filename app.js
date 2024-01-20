@@ -14,6 +14,11 @@ const container = React.createElement(
  
   //passing a react element inside the root 
   //async defer
-  
+
 root.render(container);
 
+
+
+let a = (i)=>{
+    console.log('ho')
+}
