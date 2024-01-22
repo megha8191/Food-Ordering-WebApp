@@ -113,6 +113,7 @@
     "yallist": "^4.0.0"
   },
   "scripts": {
+    "start": "parcel index.html",
     "test": "jest"
   },
   "repository": {
