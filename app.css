@@ -1,12 +1,15 @@
 :root{
-    --theme:#ca2128;
+    --theme: #d22902;
     --basic-font-size:16px;
 }
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family :"Nunito", sans-serif;
     font-size: var( --basic-font-size);
+}
+html{
+    font-size: 16px;
 }
 input,button{
     outline: none;
@@ -17,48 +20,85 @@ button , input[type="submit"]{
 }
 a{
  display: inline-block;
-}
-html{
-    font-size: 16px;
+ text-decoration: none;
 }
 .headerClass {
     background: #eee;
-    padding: 6px 20px;
+    padding: 10px 20px;
     display: grid;
     align-items: center;
     grid-template-columns: auto 1fr auto;
     gap: 15px;
 }
-
 img.logo {
     width: 110px;
     height: auto;
 }
-
-img.userimg {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 100%;
+.logo *{
+    font-size: 40px;
+    font-weight : 800;
+    color:var(--theme)
 }
-
+.navbar-nav ul{
+    display: flex;
+    gap:0px 40px;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: flex-end;
+}
+.navbar-nav ul li a{
+    color: #000;
+    padding:10px 0;
+}
+.navbar-nav ul li a.active{
+    color:var(--theme)  
+}
+.cartBtn{
+    margin:0 auto 0 20px;
+    color:var(--theme) ;
+    font-weight: bold;
+    font-size: 110%;
+}
 .form-control{
     width: 100%;
     max-width: 100%;
     padding: 10px;
     border: 1px solid #aaa;
 }
-
 .searchblock {
     display: flex;
     max-width: 500px;
     margin: 0 auto;
     width: 100%;
 }
-
 .btn-theme {
     background: var(--theme);
     border: 1px solid var(--theme);
     color: #fff;
     padding: 6px 20px;
+}
+.cardImage{
+    border: 1px solid #eee;
+    height: 140px;
+    padding: 10px;
+    background-color: #eee;
+    margin-bottom: 10px;
+}
+.restaurant-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:20px;
+    padding: 20px;
+}
+footer{
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.innerMain{
+    min-height: 80vh;
+}
+.footerlinks{
+    margin-bottom:10px;
 }
