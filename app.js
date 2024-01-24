@@ -1837,7 +1837,7 @@ const HeaderComponent = () => {
     </header>
   )
 }
-
+// --------------WAY 1-----------
 // const RestaurantCardsList = () => {
 //   let all = restaurantList.map(function (item) {
 //     let res = item.data;
@@ -1855,31 +1855,36 @@ const HeaderComponent = () => {
 //   return all
 // }
 
-// const RestaurantCard=({name,avgRating,cuisines})=>{
+
+// --------------WAY 2-----------
+// const RestaurantCard=(props)=>{
 //   return (
-//       <div className="card" key={name} >
-//         <div className="cardImage">
-//            <img src="/images/about-1.jpg"></img>
-//         </div>
-//         <h4>{name}</h4>
-//         <p>{avgRating} stars</p>
-//         <p>{cuisines.join(', ')}</p>
+//     <div className="card" key={props.data.name} >
+//       <div className="cardImage">
+//           <img src="/images/about-1.jpg"></img>
 //       </div>
+//       <h4>{props.data.name}</h4>
+//       <p>{props.data.avgRating} stars</p>
+//       <p>{props.data.cuisines.join(', ')}</p>
+//     </div>
 //   )
 // }
 
-const RestaurantCard=({props})=>{
-  console.log(props)
+// --------------WAY 3-----------
+const RestaurantCard=({name,avgRating,cuisines})=>{
   return (
-      <div className="card">
+      <div className="card" key={name} >
         <div className="cardImage">
            <img src="/images/about-1.jpg"></img>
         </div>
         <h4>{name}</h4>
-       
+        <p>{avgRating} stars</p>
+        <p>{cuisines.join(', ')}</p>
       </div>
   )
 }
+
+
 
 const Body = () => {
   return (
@@ -1889,7 +1894,10 @@ const Body = () => {
         <input type="submit" className="btn-theme" />
       </div>
       <div className="restaurant-list">
-      <RestaurantCard  data={restaurantList[0].data}/>
+      {restaurantList.map((restaurant) => {
+          // ---------WAY 2------ // return <RestaurantCard  data={restaurant.data}/>
+        return <RestaurantCard key={restaurant.data.id} {...restaurant.data} />;
+    })}
       </div>
     </div>
   )
