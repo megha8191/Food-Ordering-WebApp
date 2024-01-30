@@ -1,16 +1,16 @@
 import {cardImg} from "../config"
-
+import { Link } from "react-router-dom";
 // --------------WAY 3-----------
-  function RestaurantCard({ name, avgRating, cuisines, cloudinaryImageId }) {
+  function RestaurantCard({ name, avgRating, cuisines, cloudinaryImageId,id}) {
     return (
-      <div className="card" key={name}>
+      <Link to={"/restaurant/"+ id} className="card" key={name}>
         <div className="cardImage">
           <img src={cardImg + cloudinaryImageId}></img>
         </div>
         <h4>{name}</h4>
         <p>{avgRating} stars</p>
         <p>{cuisines.join(', ')}</p>
-      </div>
+      </Link>
     );
   }
   

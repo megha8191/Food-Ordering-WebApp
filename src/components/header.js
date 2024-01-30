@@ -1,35 +1,25 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export const Logo = () => <a href="" className="logo"><h4>Restoran</h4></a>
 
-
 const Header = () => {
-  const [headColorui, setHeadColorui] = useState("#eee")
+  // const [headColorui, setHeadColorui] = useState("#eee")
   const [isLogin, setIsLogin] = useState(false)
 
   return (
-    <header id="header" className="headerClass" style={{ backgroundColor: headColorui, color: "#000" }}>
+    <header id="header" className="headerClass">
       <Logo />
-      <button type="button" className="btn-theme" onClick={() => {
-        if (headColorui === "grey") {
-          setHeadColorui("#eee")
-        }
-        else {
-          setHeadColorui("grey")
-        }
-      }}> HeaderTheme</button>
       <div className="navbar-nav">
         <ul>
-          <li><a href="" className="nav-item nav-link active">Home</a></li>
-          <li><a href="" className="nav-item nav-link">About</a></li>
-          <li><a href="" className="nav-item nav-link">Service</a></li>
-          <li><a href="" className="nav-item nav-link">Dishes</a></li>
+          <li><Link to="" className="nav-item nav-linkactive">Home</Link></li>
+          <li><Link to="/about" className="nav-item nav-link">About</Link></li>
+          <li><Link to="" className="nav-item nav-link">Service</Link></li>
+          <li><Link to="/contact" className="nav-item nav-link">Contact</Link></li>
         </ul>
-        <a href="" className="cartBtn">Cart</a>
+        <Link to="" className="cartBtn">Cart</Link>
       </div>
-      <button type="button" className="login" onClick={()=>(!isLogin)?setIsLogin(true):setIsLogin(false)}
-      >{(!isLogin)?"Login":"Logout"} </button>
-
+      <Link to="/login" className="btn-theme">Login</Link>
     </header>
   )
 }

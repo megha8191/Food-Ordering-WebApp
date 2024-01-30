@@ -33,7 +33,7 @@ const Body = () => {
     if (!allRestaurants) return <Shimmer></Shimmer>;
     else {
         return (
-            <div className="innerMain" style={{ margin: "20px" }}>
+            <div className="innerMain">
                 <div className="searchblock">
                     <input
                         name="search"

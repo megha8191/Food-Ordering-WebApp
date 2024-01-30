@@ -1,8 +1,9 @@
 const Shimmer = () => {
     let dummynumber = new Array(9).fill('0');
+    let i = 78;
     console.log(dummynumber)
     return (
-        <div className="innerMain shimmer-styles" style={{ marginTop: "20px" }}>
+        <div className="innerMain shimmer-styles" >
             <div className="searchblock">
                 <input readOnly
                     className="form-control"
@@ -11,7 +12,6 @@ const Shimmer = () => {
             </div>
             <div className="restaurant-list">
                 {dummynumber.map((restaurant) => {
-                    let i = 0;
                     return <div className="shimmer-box" key={i++}> <p>....</p></div>
                 })}
             </div>
