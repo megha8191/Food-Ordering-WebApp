@@ -188,8 +188,9 @@ footer {
 
 .menu-Item {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 50px 1fr auto;
     max-width: 420px;
+    align-items: center;
     gap: 10px;
     margin-bottom: 10px;
 }
@@ -211,4 +212,10 @@ footer {
     display: flex;
     align-items: center;
     gap: 25px;
+}
+.error{
+    color: #d22902;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }

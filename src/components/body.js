@@ -52,9 +52,6 @@ const Body = () => {
                         return <RestaurantCard key={restaurant.info.id} {...restaurant.info} />;
                     })}
                 </div>) : (<p style={{ marginTop: "20px", textAlign: "center" }}>No Results</p>)}
-
-
-
             </div>
         )
     }

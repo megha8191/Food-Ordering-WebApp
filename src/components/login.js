@@ -1,47 +1,70 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { Formik  } from 'formik';
 
-const Login = () => {
-  // Pass the useFormik() hook initial form values and a submit function that will
-  // be called when the form is submitted
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      password:'',
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
-  return (
-    <div className="innerMain form-width">
-    <form onSubmit={formik.handleSubmit}>
-        <div className='mb-3'>
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        className="form-control"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-      </div>
-      <div className='mb-3'>
-      <label htmlFor="email">Password</label>
-      <input
-        id="password"
-        name="password"
-        type="password"
-        className="form-control"
-        onChange={formik.handleChange}
-        value={formik.values.password}
-      />
-      </div>
+const Login = () => (
+  <div className='innerMain'>
+    <h1>Form Anywhere!</h1>
+    <Formik
+      initialValues={{ email: '', password: '' }}
+      validate={values => {
+        const errors = {};
+        if (!values.email) {
+          errors.email = <p className='error'>Required</p>;
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = 'Invalid email address';
+        }
+        if (!values.password) {
+          errors.password = <p className='error'>Required</p>;
+        } 
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+        /* and other goodies */
+      }) => (
+        <form onSubmit={handleSubmit}>
+          <label>email</label>
+          <input
+            type="email"
+            name="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className='form-control'
+            value={values.email}
+          />
+          {errors.email && touched.email && errors.email}
+          <label>password</label>
+          <input
+            type="password"
+            name="password"
+            className='form-control'
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.password}
+          />
+          {errors.password && touched.password && errors.password}
+          <button type="submit" className='btn-theme' disabled={isSubmitting}>
+            Submit
+          </button>
+        </form>
+      )}
+    </Formik>
+  </div>
+);
 
-      <button type="submit" className='btn-theme'>Submit</button>
-    </form>
-    </div>
-  );
-};
 export default Login;
