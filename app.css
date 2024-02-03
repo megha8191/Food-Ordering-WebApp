@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 :root {
     --theme: #d22902;
     --basic-font-size: 16px;
