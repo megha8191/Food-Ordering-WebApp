@@ -1,7 +1,6 @@
 const Shimmer = () => {
     let dummynumber = new Array(9).fill('0');
-    let i = 78;
-    console.log(dummynumber)
+    let i = 0;
     return (
         <div className="innerMain shimmer-styles" >
             <div className="searchblock">
@@ -12,7 +11,7 @@ const Shimmer = () => {
             </div>
             <div className="restaurant-list">
                 {dummynumber.map((restaurant) => {
-                    return <div className="shimmer-box" key={i++}> <p>....</p></div>
+                    return <div className="shimmer-box" key={"restaurant" + i++}> <p>....</p></div>
                 })}
             </div>
         </div>
