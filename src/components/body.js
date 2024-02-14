@@ -20,18 +20,24 @@ const Body = () => {
     }, [])
     
     async function getrestaurants() {
-        const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-        )
-        const jsonlist = await data.json();
-        setAllRestaurants(jsonlist.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFlrRestaurants(jsonlist.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        try{
+            const data = await fetch(
+                "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+            )
+            const jsonlist = await data.json();
+            setAllRestaurants(jsonlist.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setFlrRestaurants(jsonlist.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        }
+        catch{
+            
+        }
+      
+       
     }
     if (!allRestaurants) return <Shimmer></Shimmer>;
     else {
         return (
             <div className="innerMain">
-                <h1>Every thing working but not  </h1>
                 <div className="searchblock">
                     <input
                         name="search"

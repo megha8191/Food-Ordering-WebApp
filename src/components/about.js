@@ -9,9 +9,10 @@ const About=()=>{
     return(
     <div className="innerMain">
         <h1>About </h1>
-        <Profile name="megha"/>
         <p>HI</p>
-        <Contact  whatever="prop-ex"/>
+        {/* <Contact whatever="prop-ex"/> */}
+        <Profile name="dummyname"/>
+       
     </div> )
 }
 export default About;

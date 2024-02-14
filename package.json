@@ -117,7 +117,7 @@
     "yallist": "^4.0.0"
   },
   "scripts": {
-    "start": "parcel --no-cache index.html",
+    "start": "parcel index.html",
     "test": "jest"
   },
   "repository": {
