@@ -38,7 +38,7 @@ a {
     text-decoration: none;
 }
 
-.headerClass {
+.headerclass {
     background: #eee;
     padding: 10px 20px;
     display: flex;
@@ -191,7 +191,7 @@ footer {
 
 .menu-Item {
     display: grid;
-    grid-template-columns: 50px 1fr auto;
+    grid-template-columns: 50px 1fr auto auto ;
     max-width: 420px;
     align-items: center;
     gap: 10px;

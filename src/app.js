@@ -12,6 +12,10 @@ import Shimmer from "./components/shimmer";
 import Faq from  "./components/Faq";
 import Contact from "./components/contact";
 import ProfileContext from "./utils/profileContext";
+import { Provider } from "react-redux";
+import Store from "./components/Store";
+import Cart from "./components/Cart";
+
 const Service= lazy(() => import("./components/ServiceV2"));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -26,6 +30,7 @@ const AppLayout = () => {
   }
   return (
     <>
+    <Provider store={Store}>
     <ProfileContext.Provider value={{
       user:user,
       userlocation:userlocation,
@@ -35,6 +40,7 @@ const AppLayout = () => {
       <Outlet/>
       <Footer />
       </ProfileContext.Provider>
+      </Provider>
     </>
   )
 }
@@ -77,6 +83,10 @@ const WebRouter = createBrowserRouter([
             <Service/>
           </Suspense>
           )
+      },
+      {
+        path:"/cart",
+        element:<Cart/>
       }
     ])
   },
