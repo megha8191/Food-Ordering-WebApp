@@ -1,9 +1,12 @@
 import { cardImg } from "../config";
+import lo from "../assets/images/logo.jpg"
 
-const FoodItem =(price,defaultPrice,imageId,name,id)=>{
-    if (!(isNaN(price||  defaultPrice))) totalCart += price / 100 || defaultPrice/ 100
+//Made for Cart items but handleremovecart fnction was not working so not used......
+
+const FoodItem =({price,defaultPrice,imageId,name,id})=>{
+
     return (
-        <div className="bg-white rounded-sm shadow-md" key={id}>
+     <div className="bg-white rounded-sm shadow-md" key={id}>
             {(imageId !== undefined) ? <img src={cardImg + imageId} className="rounded-t-sm aspect-video object-cover" /> : <img src={lo} className="rounded-t-sm aspect-video object-cover" />}
             <div className="p-2">
                 <p className="font-bold text-2xl">{name}</p>

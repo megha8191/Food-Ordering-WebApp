@@ -201,7 +201,7 @@ footer {
     column-count: 2;
 }
 .about-rest>img{
-    max-width: 450px;
+    max-width:300px;
 }
 .form-width{
     max-width: 400px;

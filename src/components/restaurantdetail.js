@@ -4,8 +4,8 @@ import { cardImg } from "../config";
 import Shimmer from "./shimmer";
 import useRestaurant from "../utils/useRestaurant";
 import { useDispatch, useSelector } from "react-redux";
-import Store from "./Store";
-import { addCartItem ,removeCartItem, clearCart } from "./CartSlice";
+import Store from "../utils/Store";
+import { addCartItem ,removeCartItem, clearCart } from "../utils/CartSlice";
 
 const RestaurantDetail = () => {
     const { Id } = useParams();

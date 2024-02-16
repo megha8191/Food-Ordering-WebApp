@@ -13,7 +13,7 @@ import Faq from  "./components/Faq";
 import Contact from "./components/contact";
 import ProfileContext from "./utils/profileContext";
 import { Provider } from "react-redux";
-import Store from "./components/Store";
+import Store from "./utils/Store";
 import Cart from "./components/Cart";
 
 const Service= lazy(() => import("./components/ServiceV2"));
