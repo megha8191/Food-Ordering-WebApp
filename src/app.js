@@ -1,4 +1,4 @@
-import React, { Suspense ,lazy ,Suspense, useContext, useEffect, useState} from "react"
+import React, { Suspense ,lazy , useContext, useEffect, useState} from "react"
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client"
 import Header from "./components/header";

@@ -1,5 +1,4 @@
 import { cardImg } from "../config"
-import { useSelector } from "react-redux";
 import lo from "../assets/images/logo.jpg"
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem, removeCartItem, clearCart } from "../utils/CartSlice";

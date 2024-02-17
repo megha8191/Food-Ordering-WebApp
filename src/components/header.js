@@ -3,8 +3,9 @@ import { Link } from "react-router-dom"
 import useOnlineStatus from "../utils/useOnlineStatus"
 import ProfileContext from "../utils/profileContext"
 import { useSelector } from "react-redux";
+import logoImg from "../assets/images/logo.jpg"
 
-export const Logo = () => <a href="" className="logo"><h4>Restoran</h4></a>
+export const Logo = () => <a href="" className="logo" ><img data-testid="logo" src={logoImg} className="w-20 aspect-square"></img></a>
 
 const Header = () => {
   const {user,userlocation}= useContext(ProfileContext)
@@ -31,7 +32,7 @@ const Header = () => {
       <div className="flex items-center">
         <Link to="/login" className="btn-theme mr-3">Login</Link>
         <div className="status w-100">
-          <p>{(online)?'✅ ': '❌ '}</p>
+          <p data-testid="onlineStatus">{(online)?'✅': '❌ '}</p>
           
           <br/>
          
