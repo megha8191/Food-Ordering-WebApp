@@ -26,7 +26,7 @@ const Header = () => {
           <li><Link to="/faq" className="nav-item nav-link">Faq</Link></li>
         </ul>
         <Link to="/cart" className="text-red-500 bg-red-50 font-bold px-4 py-2">Cart 
-             <span className="text-white bg-red-700 px-2 py-1 ml-2">{cartItems.length}</span>
+             <span className="text-white bg-red-700 px-2 py-1 ml-2" data-testid="cartNumber">{cartItems.length}</span>
         </Link>
       </div>
       <div className="flex items-center">

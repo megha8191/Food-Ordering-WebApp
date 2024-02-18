@@ -44,7 +44,7 @@ const RestaurantDetail = () => {
                     <p className="" key="avgRating">{resInfo.avgRating} Stars</p>
                 </div>
             </div>
-            <div className="restMenu">
+            <div className="restMenu" data-testid="menu">
 
                 {menuList.map(function (menuItem) {
                     const menudish = menuItem?.card?.info;
@@ -54,7 +54,7 @@ const RestaurantDetail = () => {
                         <strong>Rs. {menudish?.price / 100 || menudish?.defaultPrice / 100}</strong>
                         <div className="flex">
                             <button className="bg-red-300 mr-1 py-0 px-2 font-bold text-2xl" onClick={()=>handleRemoveCart(menuItem)}>-</button>
-                            <button className="bg-green-300 py-0 px-2 text-boldtext-2xl" onClick={()=>handleAddCart(menuItem)}> +</button>
+                            <button className="bg-green-300 py-0 px-2 text-boldtext-2xl" data-testid="addbtn" onClick={()=>handleAddCart(menuItem)}> +</button>
                         </div>
                     </div>
                 })}

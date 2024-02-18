@@ -17,7 +17,6 @@ test('Logo rendering properly', () => {
 
     // check Online status
     const logo = header.getByTestId('logo');
-    console.log(logo);
     expect(logo.src).toBe('http://localhost/dummy.jpg')
 })
 
@@ -33,6 +32,5 @@ test('Check online status', () => {
 
     // check Online status
     const onlineStatus = header.getByTestId('onlineStatus');
-    // console.log(onlineStatus);
     expect(onlineStatus.innerHTML).toBe('✅')
 })

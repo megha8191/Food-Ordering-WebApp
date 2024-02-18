@@ -38,20 +38,21 @@ const Body = () => {
     else {
         return (
             <div className="innerMain">
-                <div className="searchblock">
+                <div className="searchblock" data-testid="searchblock">
                     <input
                         name="search"
                         type="search"
                         onChange={(e) => setsearchText(e.target.value)}
                         className="form-control"
+                        data-testid="search-input" 
                         placeholder="Search for Restaurants..." />
-                    <button type="button" className="btn-theme" onClick={() => {
+                    <button type="button" className="btn-theme" data-testid="search-btn" onClick={() => {
                         let data = filterData(searchText, allRestaurants);
                         setFlrRestaurants(data);
                     }}>Search</button>
                 </div>
 
-                {(flrRestaurants.length) ? (<div className="restaurant-list">
+                {(flrRestaurants.length) ? (<div className="restaurant-list" data-testid="res-list">
                     {flrRestaurants.map((restaurant) => {
                         return <RestaurantCard key={restaurant.info.id} {...restaurant.info} />;
                     })}
