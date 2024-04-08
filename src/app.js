@@ -94,34 +94,8 @@ const WebRouter = createBrowserRouter([
 ])
 
 // root.render(<RouterProvider router={WebRouter}/>);
-
-const heading1 = React.createElement(
-  "h2",
-  {
-    id:"megha",
-  },
-  "I'm Your HEADING"
-)
-
-const para = React.createElement(
-  "p",
-  {
-    id:"s",
-  },
-  "I'm Your paragraph . I know it should be long"
-)
-const onlyme = React.createElement(
-  "div"  ,
-  {
-    id:"me",
-    className:"s"
-  },
-  [heading1,para]
-)
-
-root.render(onlyme)
-// root.render(
-//   <React.StrictMode>
-//     <RouterProvider router={WebRouter} />
-//   </React.StrictMode>,  
-// );
+root.render(
+  <React.StrictMode>
+    <RouterProvider router={WebRouter} />
+  </React.StrictMode>,  
+);

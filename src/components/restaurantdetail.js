@@ -19,20 +19,18 @@ const RestaurantDetail = () => {
 
     const handleAddCart=(cartitem)=>{
         dispatch(addCartItem(cartitem))
-        // console.log(cartItems)
     }
 
-    const handleClearAll=()=>{
-        dispatch(clearCart());
-        // console.log(cartItems)
-    }
+    // const handleClearAll=()=>{
+    //     dispatch(clearCart());
+    // }
 
     if (restaurant) {
-        // console.log(restaurant)
-        const resInfo = restaurant?.data?.cards[0]?.card?.card?.info;
-        const menuList = (restaurant?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card.itemCards).concat(
+        console.log(restaurant)
+        const resInfo = restaurant?.data?.cards[2]?.card?.card?.info;
+        const menuList = (restaurant?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card.itemCards).concat(
             restaurant?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card.itemCards);
-        // console.log(menuList)
+        
         let i = 0;
         return <div className="rest-info">
             <div className="about-rest">
@@ -48,7 +46,8 @@ const RestaurantDetail = () => {
 
                 {menuList.map(function (menuItem) {
                     const menudish = menuItem?.card?.info;
-                    return <div className="menu-Item" key={"menuItem" + i++}>
+                    if(menudish){
+                        return <div className="menu-Item" key={"menuItem" + i++}>
                         <img src={cardImg + menudish?.imageId} />
                         <p>{menudish?.name}</p>
                         <strong>Rs. {menudish?.price / 100 || menudish?.defaultPrice / 100}</strong>
@@ -57,6 +56,8 @@ const RestaurantDetail = () => {
                             <button className="bg-green-300 py-0 px-2 text-boldtext-2xl" data-testid="addbtn" onClick={()=>handleAddCart(menuItem)}> +</button>
                         </div>
                     </div>
+                    }
+  
                 })}
             </div>
         </div>

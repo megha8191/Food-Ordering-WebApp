@@ -7,7 +7,11 @@ import { Link } from "react-router-dom";
         <div className="cardImage">
           <img src={cardImg + cloudinaryImageId}></img>
         </div>
-        <h4>{name}</h4>
+        <h4 style={{
+          color:"green",
+          fontStyle:"italic",
+          fontSize:"24px"
+        }}>{name}</h4>
         <p>{avgRating} stars</p>
         <p>{cuisines.join(', ')}</p>
       </Link>
