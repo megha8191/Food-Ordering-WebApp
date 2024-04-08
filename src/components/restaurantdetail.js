@@ -34,12 +34,12 @@ const RestaurantDetail = () => {
         let i = 0;
         return <div className="rest-info">
             <div className="about-rest">
-                <img src={cardImg + resInfo.cloudinaryImageId
+                <img src={cardImg + resInfo?.cloudinaryImageId
                 } />
                 <div className="">
-                    <h2>{resInfo.name}</h2>
-                    <p className="" key="city">{resInfo.areaName + "," + resInfo.city}</p>
-                    <p className="" key="avgRating">{resInfo.avgRating} Stars</p>
+                    <h2>{resInfo?.name}</h2>
+                    <p className="" key="city">{resInfo?.areaName + "," + resInfo?.city}</p>
+                    <p className="" key="avgRating">{resInfo?.avgRating} Stars</p>
                 </div>
             </div>
             <div className="restMenu" data-testid="menu">
