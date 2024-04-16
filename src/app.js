@@ -31,16 +31,16 @@ const AppLayout = () => {
   return (
     <>
     <Provider store={Store}>
-    <ProfileContext.Provider value={{
-      user:user,
-      userlocation:userlocation,
-      setUserlocation:setUserlocation
-    }}>
-      <Header />
-      <Outlet/>
-      <Footer />
-      </ProfileContext.Provider>
-      </Provider>
+      <ProfileContext.Provider value={{
+        user:user,
+        userlocation:userlocation,
+        setUserlocation:setUserlocation
+      }}>
+        <Header />
+        <Outlet/>
+        <Footer />
+        </ProfileContext.Provider>
+    </Provider>
     </>
   )
 }
@@ -49,7 +49,7 @@ const WebRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout/>,
-    errorElement:<Error/>,
+    errorElement:<Error/>,                                      
     children:([
       {
         path:"about",

@@ -6,14 +6,14 @@ class Contact extends React.Component {
         super(props);
 
         this.state = {
-            count: 1,
-            count2: 2,
+            count: 0,
+            count2: 4,
             name: "megha"
         }
     }
 
      componentDidMount(){
-    //    API
+    //    call API
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -23,7 +23,8 @@ class Contact extends React.Component {
 
     componentWillUnmount(){
         //would run when component page left,
-        //add when required
+        //add when required 
+        // in case of settimeouts/setintervals
     }
 
     render() {
@@ -31,7 +32,7 @@ class Contact extends React.Component {
         return <div className="innerMain">
             <h1 className="text-3xl text-center">Contact Us</h1>
             <p>Phone:807968697</p>
-            <p>Count value : {count}</p>
+            <p>Count value : {this.state.count}</p>
             <button className="text-white mt-1 mb-3 bg-blue-700 hover:bg-blue-800 focus:outline-none rounded-full px-5 py-2.5 text-center " onClick={() => {
                 this.setState({     
                     count: 6
@@ -47,11 +48,12 @@ class Contact extends React.Component {
             >Change name to abc</button>
             <p>Prop from with contact {this.props.whatever}</p>
             <p>
-                     Name is</p>
+            Name is</p>
             <ProfileContext.Consumer>
                 {(par)=>{return(
- <p>
-                    <br/> Location is <b>{par.userlocation.state},{par.userlocation.country}</b> </p>
+                <p>
+                    <br/> Location is <b>{par.userlocation.state},{par.userlocation.country}</b> 
+                </p>
                  )
                  }}
             </ProfileContext.Consumer>
